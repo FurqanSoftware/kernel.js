@@ -4,7 +4,8 @@
   "description": "Toph's browser-side JavaScript utilities",
   "main": "dist/",
   "scripts": {
-    "build": "rollup --config"
+    "build": "rollup --config",
+    "prepare": "rollup --config"
   },
   "author": "Mahmud Ridwan <m@hjr265.me>",
   "license": "BSD-3-Clause",
