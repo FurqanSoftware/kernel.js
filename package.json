@@ -1,5 +1,5 @@
 {
-  "name": "kernel.js",
+  "name": "@toph/kernel.js",
   "version": "1.0.0",
   "description": "Toph's browser-side JavaScript utilities",
   "main": "dist/",
