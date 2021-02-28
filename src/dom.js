@@ -97,7 +97,7 @@ export default {
 	},
 
 	parse(s) {
-		d = document.implementation.createHTMLDocument();
+		let d = document.implementation.createHTMLDocument();
 		d.body.innerHTML = s;
 		return d.body;
 	},
