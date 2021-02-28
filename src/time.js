@@ -110,7 +110,7 @@ export default {
 		let m = x % 60;
 		let h = Math.floor(x / 60);
 		if (v > 24*60*60) {
-			d = Math.floor(h / 24);
+			let d = Math.floor(h / 24);
 			if (d > 99) {
 				return `${d}d`;
 			} else {
