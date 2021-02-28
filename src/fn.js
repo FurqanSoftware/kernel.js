@@ -7,27 +7,27 @@ export default {
 	},
 
 	wrap(func, other) {
-		return (...args) => {
-			return other(func, ...args);
+		return function() {
+			return other(func, ...arguments);
 		};
 	},
 
 	debounce (func, wait, immediate) {
 		let lastArgs = [];
 		let timeout = null;
-		return (...args) => {
-			lastArgs = args;
+		return function() {
+			lastArgs = arguments;
 			let later = () => {
 				timeout = null;
 				if (!immediate) {
-					func.apply(void 0, lastArgs);
+					func.apply(this, lastArgs);
 				}
 			};
 			let callNow = immediate && !timeout;
 			clearTimeout(timeout);
 			timeout = setTimeout(later, wait);
 			if (callNow) {
-				func.apply(void 0, lastArgs);
+				func.apply(this, lastArgs);
 			}
 		};
 	},
@@ -48,21 +48,21 @@ export default {
 			}
 		}
 
-		return (...args) => {
+		return function() {
 			let now = new Date().getTime();
 			let remaining = wait - (now - previous);
 			context = this;
-			lastArgs = args;
+			lastArgs = arguments;
 			if (remaining <= 0 || remaining > wait) {
 				if (timeout) {
 					clearTimeout(timeout);
 					timeout = null;
 				}
 				previous = now;
-				func.apply(context, args);
+				func.apply(context, arguments);
 				if (!timeout) {
 					context = null;
-					args = null;
+					lastArgs = null;
 				}
 			} else if (!timeout) {
 				timeout = setTimeout(later, remaining);
