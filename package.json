@@ -10,7 +10,6 @@
     "./time": "./dist/time.js"
   },
   "scripts": {
-    "build": "rollup --config",
     "prepare": "rollup --config"
   },
   "author": "Mahmud Ridwan <m@hjr265.me>",
