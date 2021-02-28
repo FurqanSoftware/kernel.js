@@ -103,6 +103,25 @@ export default {
 		return `${Math.floor(d)}${suf}`
 	},
 
+	formatClock(v) {
+		v = Math.floor(v);
+		let s = v % 60;
+		let x = Math.floor(v / 60);
+		let m = x % 60;
+		let h = Math.floor(x / 60);
+		if (v > 24*60*60) {
+			d = Math.floor(h / 24);
+			if (d > 99) {
+				return `${d}d`;
+			} else {
+				h = h % 24;
+				return `${d}d ${h}h`;
+			}
+		} else {
+			return `${h}:${pad2(m)}:${pad2(s)}`;
+		}
+	},
+
 	isBefore(a, b) {
 		return a < b;
 	},
