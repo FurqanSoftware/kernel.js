@@ -2,7 +2,13 @@
   "name": "@toph/kernel.js",
   "version": "1.0.0",
   "description": "Toph's browser-side JavaScript utilities",
-  "main": "dist/",
+  "exports": {
+    "./dom": "./dist/dom.js",
+    "./fn": "./dist/fn.js",
+    "./format": "./dist/format.js",
+    "./http": "./dist/http.js",
+    "./time": "./dist/time.js"
+  },
   "scripts": {
     "build": "rollup --config",
     "prepare": "rollup --config"
