@@ -103,7 +103,7 @@ export default {
 	},
 
 	escape(s) {
-		s.replace(/[\u00A0-\u9999<>&](?!#)/gim, (c) => `&#${c.charCodeAt(0)};`);
+		return s.replace(/[\u00A0-\u9999<>&](?!#)/gim, (c) => `&#${c.charCodeAt(0)};`);
 	},
 
 	getText(el) {
