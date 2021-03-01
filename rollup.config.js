@@ -6,6 +6,7 @@ export default {
 		'fn',
 		'format',
 		'http',
+		'plugin',
 		'time'
 	].map(x => `src/${x}`),
 	output: {
